@@ -5,6 +5,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #172730;
+  color: #e0e0e0;
+
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.bg-blue-gray {
+  background: #2c3c45;
 }
 
 code {
