@@ -13,7 +13,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/users', {mode: 'no-cors'})
+        fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(users => this.setState({ robots: users })
         );
@@ -30,13 +30,15 @@ class App extends Component {
         });
         //ternary
         return !robots.length ?
-            <div className="tc">
+            <div className="tc grid sticky">
                 <h1>Loading...</h1>
             </div> :
         (
             <div className="tc">
-                <h1 className="f1">ROBOFRIENDS</h1>
-                <SearchBox searchChange={this.onSearchChange}/>
+                <div className="sticky bg-blue-gray-dark">
+                    <h1 className="f1">ROBOFRIENDS</h1>
+                    <SearchBox searchChange={this.onSearchChange}/>
+                </div>
                 <Scroll>
                     <CardList robots={filteredRobots}/>
                 </Scroll>
